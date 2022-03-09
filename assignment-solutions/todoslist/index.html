@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List </title>
+    <style>
+        body {
+            background-color: #808080;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input,
+        button {
+            border: none;
+            padding: 10px;
+        }
+
+        .list-wrapper {
+            width: 30%;
+            margin: 20px 0;
+        }
+
+        .list-item div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-item{
+            margin-top: 12px;
+        }
+        .removebtn:hover {
+            background-color: rgb(129, 52, 52);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>ToDos list app</h1>
+        <div>
+            <b>Enter Your Name: </b><input type="text" id="inputName">
+            <button type="button" onclick="addNameToList()">Add</button>
+        </div>
+        <ol class="list-wrapper" id="list-wrapper">
+
+        </ol>
+    </div>
+
+    <script>
+        function addNameToList() {
+            myName = document.getElementById("inputName").value;
+            if (myName.length <= 1) {
+                window.alert("Name is too short!");
+            }
+            else {
+                document.getElementById("inputName").value = "";
+                appendName(myName);
+            }
+        }
+
+        function appendName(myName) {
+            listItem = document.createElement("li");
+            listContent = document.createElement("div")
+            listItem.classList.add("list-item");
+
+            nameDiv = document.createElement("div");
+            removeBtn = document.createElement("button");
+
+            nameDiv.innerHTML = myName;
+            removeBtn.innerHTML = "Remove";
+            removeBtn.classList.add("removebtn");
+
+            removeBtn.addEventListener('click', function () {
+                this.parentElement.parentElement.remove()
+            });
+
+            listWrapper = document.getElementById("list-wrapper");
+            listWrapper.appendChild(listItem)
+            listItem.appendChild(listContent)
+            listContent.append(nameDiv, removeBtn);
+
+
+
+        }
+    </script>
+</body>
+
+</html>

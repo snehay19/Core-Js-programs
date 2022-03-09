@@ -1,0 +1,36 @@
+.container {
+    text-align: center;
+}
+h1{
+    font-style: oblique;
+    color: #a1a652;
+    text-decoration: underline;
+  
+}
+table {
+    margin: auto;
+    margin-top: 3px;
+}
+
+input {
+    border-radius: 15px;
+    font-size: 21px;
+    border: 4px solid #c475a4;
+}
+.calculator-container{
+    background-color: #757bc4;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 16px;
+    margin-top: 23px;
+    border: 2px solid #c000ff;
+}
+button {
+    font-size: 21px;
+    width: 65px;
+    height: 40px;
+    border-radius: 16px;
+    background: #c6bcbc;
+    color: #723c16;
+
+}

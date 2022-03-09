@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            background-color: #808080;
+            font-size: 1.2rem;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+        }
+
+        .container img {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Image Slider App</h1>
+        <h4>Images will slide in every 5 minutes!</h4>
+
+        <div class="image-slider-wrapper">
+            <img src="./images/image1.jpg" id="image" alt="image-one">
+        </div>
+    </div>
+
+    <script>
+        var imageList = [
+            "images/image1.jpg",
+            "images/image2.jpg",
+            "images/image3.jpg",
+            "images/image4.jpg",
+            "images/image5.jpg",
+
+        ]
+        image = document.getElementById('image')
+        setInterval(() => {
+            image.setAttribute("src", imageList[Math.floor(Math.random() * 5)]);
+        }, 5000)
+
+    </script>
+</body>
+
+</html>
